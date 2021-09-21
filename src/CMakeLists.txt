@@ -5,5 +5,5 @@ project("tetris")
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
-add_executable(Game Game.cpp)
+add_executable(Game Game.cpp Control.cpp)
 target_link_libraries(Game ${SDL2_LIBRARIES})
