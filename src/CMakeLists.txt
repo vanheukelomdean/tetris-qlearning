@@ -1,9 +1,19 @@
-cmake_minimum_required(VERSION 3.21.3)
-
-project("tetris")
+project(game)
 
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+include_directories(
+    ${PROJECT_SOURCE_DIR}, 
+    ${SDL2_INCLUDE_DIRS}
+)
 
-add_executable(Game Game.cpp Control.cpp)
-target_link_libraries(Game ${SDL2_LIBRARIES})
+add_executable(
+    ${PROJECT_NAME} 
+    Game.cpp 
+    Control.cpp 
+    Tetromino.cpp
+)
+
+target_link_libraries(
+    ${PROJECT_NAME}
+    ${SDL2_LIBRARIES}
+)
